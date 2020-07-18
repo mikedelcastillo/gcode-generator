@@ -1,18 +1,17 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<template lang="pug">
+  .view-container
+    ul
+      li(v-for='(generator, generator_id) in $store.state.generators')
+        router-link(:to="{name:'generate',params:{generator_id}}") {{generator_id}}
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    
   }
 }
 </script>
